@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import './banner.css';
 import bgImg from '../images/bg-transformer.jpg';
-import titleImg from '../images/transformer-title.png';
+import MovieContent from '../components/MoveiContent';
+import MovieDate from '../components/MovieDate';
+import PlayBtn from '../components/PlayBtn';
 
 function Banner() {
     const [movie, setMovies] = useState([]);
@@ -24,37 +26,11 @@ function Banner() {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-6 col-md-12">
-                        <div className="content active">
-                            <img src={titleImg} alt="Movie Title" className="movie-title" />
-                            <h4>
-                                <span>Year</span>
-                               <span>
-                                <i>age</i>
-                               </span>
-                               <span>length</span>
-                               <span>category</span>
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Maiores, nostrum voluptatem. Sunt nihil a soluta maiores,
-                                numquam assumenda dicta aliquam repudiandae ipsum hic, eveniet
-                                magni minus consectetur, eos aperiam quae iste ipsa sed. Et
-                                optio molestiae, soluta illum ipsa harum dignissimos in dicta
-                                quis! Itaque temporibus qui iusto architecto velit!
-                            </p>
-                            <div className="button">Button</div>
-                        </div>
+                        <MovieContent/>
                     </div>
                     <div className="col-lg-6 col-md-12">
-                        <div className="date active">
-                            <h2>On 15th August</h2> 
-                        </div>
-                        <div className="trailer">
-                            <a href="" className="playBtn">
-                                <ion-icon name="play-outline"></ion-icon>
-                            </a>
-                            <p>Watch Trailer</p>
-                        </div>
+                        <MovieDate/>
+                        <PlayBtn/>
                     </div>
                 </div>
             </div>
