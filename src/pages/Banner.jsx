@@ -33,7 +33,7 @@ function Banner() {
                         <MovieDate/>
                         <PlayBtn/>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
         {movies && movies.length > 0 && <MovieSwiper slides={movies} />}
