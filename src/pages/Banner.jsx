@@ -4,9 +4,10 @@ import bgImg from '../images/bg-transformer.jpg';
 import MovieContent from '../components/MoveiContent';
 import MovieDate from '../components/MovieDate';
 import PlayBtn from '../components/PlayBtn';
+import MovieSwiper from "../components/MovieSwiper";
 
 function Banner() {
-    const [movie, setMovies] = useState([]);
+    const [movies, setMovies] = useState([]);
 
         const fetchData = () => {
             fetch('http://localhost:3000/data/movieData.json')
@@ -35,6 +36,7 @@ function Banner() {
                 </div>
             </div>
         </div>
+        {movies && movies.length > 0 && <MovieSwiper slides={movies} />}
     </div>
    );
 }
