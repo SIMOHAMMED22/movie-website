@@ -3,26 +3,19 @@ import './movieContent.css';
 import titleImg from '../images/transformer-title.png';
 import Button from "./Button";
 
-function MovieContent() {
+function MovieContent({ movie }) {
     return (
-        <div className="content active">
-        <img src={titleImg} alt="Movie Title" className="movie-title" />
+        <div className={`content ${movie.active ? 'active' : undefined}`}>
+        <img src={movie.titleImg} alt="Movie Title" className="movie-title" />
         <h4>
-            <span>Year</span>
+            <span>{movie.year}</span>
            <span>
-            <i>age</i>
+            <i>{movie.ageLimit}</i>
            </span>
-           <span>length</span>
-           <span>category</span>
+           <span>{movie.length}</span>
+           <span>{movie.category}</span>
         </h4>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Maiores, nostrum voluptatem. Sunt nihil a soluta maiores,
-            numquam assumenda dicta aliquam repudiandae ipsum hic, eveniet
-            magni minus consectetur, eos aperiam quae iste ipsa sed. Et
-            optio molestiae, soluta illum ipsa harum dignissimos in dicta
-            quis! Itaque temporibus qui iusto architecto velit!
-        </p>
+        <p>{movie.description}</p>
         <div className="button">
            <Button 
            icon={<ion-icon name="bookmark-outline"></ion-icon>}
